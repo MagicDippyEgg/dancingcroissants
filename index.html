@@ -18,6 +18,12 @@
       font-size: 3em;
     }
 
+    .croissant-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .croissant {
       width: 100px;
       height: 100px;
@@ -37,16 +43,36 @@
       font-size: 1.2em;
       color: #7a4e1d;
     }
+
+    .dance-button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #d2691e;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dance-button:hover {
+      background-color: #b85c1c;
+    }
   </style>
 </head>
 <body>
   <h1>Welcome to Dancing Croissants!</h1>
   <p>These buttery treats can't stop grooving 🥐💃</p>
 
-  <div class="croissant"></div>
-  <div class="croissant"></div>
-  <div class="croissant"></div>
-  <div class="croissant"></div>
+  <button class="dance-button" onclick="location.href='dance.html'">Go to Dance Page</button>
+
+  <div class="croissant-container">
+    <div class="croissant"></div>
+    <div class="croissant"></div>
+    <div class="croissant"></div>
+    <div class="croissant"></div>
+  </div>
 
   <script>
     // Optional: add some silly interactivity
