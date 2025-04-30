@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dancing Croissants - Dance Page</title>
+  <style>
+    body {
+      background: #fff7e6;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding: 50px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #d2691e;
+      font-size: 3em;
+    }
+
+    .croissant-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .croissant {
+      width: 100px;
+      height: 100px;
+      background-image: url('Croissant.jpg');
+      background-size: cover;
+      display: inline-block;
+      animation: dance 1s infinite alternate ease-in-out;
+    }
+
+    @keyframes dance {
+      0% { transform: rotate(-10deg) scale(1); }
+      100% { transform: rotate(10deg) scale(1.1); }
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #7a4e1d;
+    }
+
+    .go-home-button {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      background-color: #d2691e;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .go-home-button:hover {
+      background-color: #b85c1c;
+    }
+  </style>
+</head>
+<body>
+  <button class="go-home-button" onclick="location.href='index.html'">Go Back Home</button>
+
+  <h1>Dancing Croissants Dance Party!</h1>
+  <p>These croissants are having the time of their lives 💃🥐</p>
+
+  <div class="croissant-container" id="croissant-container">
+    <!-- Croissants will be added dynamically here -->
+  </div>
+
+  <script>
+    // Function to create a new croissant
+    function addCroissant() {
+      const croissantContainer = document.getElementById('croissant-container');
+      const croissant = document.createElement('div');
+      croissant.classList.add('croissant');
+      croissantContainer.appendChild(croissant);
+    }
+
+    // Add initial croissants
+    for (let i = 0; i < 10; i++) {
+      addCroissant();
+    }
+
+    // Keep adding new croissants every second
+    setInterval(addCroissant, 1000);
+  </script>
+</body>
+</html>
